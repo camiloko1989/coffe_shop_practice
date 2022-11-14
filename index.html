@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <style>
+        *{ box-sizing: border-box;}
+
+        *, html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body{
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-color: #fffecd;
+        }
+
+        #wrapper{
+            width: 80%;
+            height: 90%;
+            margin:auto;
+            overflow: auto;
+            
+        }
+
+        header{
+            background-color: #cca965;
+            border: 10px #a62c2c solid;
+            color: black;
+            height: 100px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        nav{
+            padding-top: 20px;
+            width: 20%;
+            text-align: center;
+            float: left;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+        nav ul{
+            list-style: none;
+            padding-left: 0px;
+            
+            
+        }
+
+        nav ul li{
+            padding: 10px;
+            margin: 3px;
+            text-decoration: none;
+            background-color: #cca965;
+            text-align: left;
+            
+            
+        }
+
+        nav ul a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            
+        }
+
+        nav ul li a:visited{
+            color: gray;
+        }
+
+        nav ul li a:hover{
+            color: gainsboro;
+        }
+
+        nav ul li a:active{
+            color: #aeb1b3;
+        }
+
+        main{
+            display: grid;
+            width: 50%;
+            float: left;
+            text-align: center;
+            font-weight: bold;
+        }
+        main h2{
+            padding: 30px;
+            margin-left: -40px;
+        }
+
+        main div{
+            margin: auto;
+        }
+
+        main ul{
+            padding: 10px;
+            padding-left: 60px;
+            padding-bottom: 30px;
+            list-style:inside;  /*helps to keep the bullet point close to text*/
+            text-align: left;
+            margin: auto;
+            color: #756b4a;
+        }
+
+        main ul li{
+            list-style-type:circle;
+        }
+
+        #address{
+            text-align: left;
+        }
+
+        #side{
+            width: 30%;
+            float: left;
+            padding-right: 15px;
+            padding-top: 40px;
+            font-weight: bold;
+        }
+
+        #greeting{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            border: 5px solid transparent;
+            border-image: url(./coffee_beans.jpg) 30 round;
+            margin: 30px;
+        }
+
+
+        footer {
+            padding-top: 10px;
+            width:100%;
+            height: 50px;
+            text-align:center;
+            position: absolute;
+            bottom: 0;
+            height: 5%;
+            background-color: #cca965;
+        }
+
+        
+        
+        
+
+    </style>
+</head>
+<body onload="myGreeting()">
+        <header>
+            <h1>Tanggo Coffee Shop</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>
+                Come and experience...
+            </h2>
+            <div>
+                <ul>
+                    <li>Specialty Coffee and Tea</li>
+                    <li>Freshly made sandwiches</li>
+                    <li>Bagels, cakes and muffins</li>
+                    <li>Bingo Bonanza</li>
+                </ul>
+                <div id="address">
+                    <span>23 Pine Road</span>
+                    <span><br>Nottingham NG1 5Y2</span>
+                    <span><br>01212242</span>
+                </div>
+                
+            </div>
+        </main>
+        <div id="side">
+            <div id="greeting">
+                <img src="coffee_cup.jpg"">
+                
+                <h3 id="hello"><br></h3>
+                <p>
+                   <br> For all orders and enquires please call 555-3344
+                </p>
+                </div>
+                
+            </div>
+                
+            </div>
+        </div>
+        <footer>
+            Ⓒ Tanggo Coffee. All rights reserved 2018
+        </footer>
+
+        <script>
+            function myGreeting(){
+                var today = new Date();
+                var hourNow = today.getHours();
+                var greeting;
+
+                console.log(hourNow)
+
+                if(hourNow > 0 && hourNow < 12){
+                    greeting = "Good Morning! \nAre you ready to order?"
+                } else if(hourNow >= 12 && hourNow < 18){
+                    greeting = "Good Afternoon! \nAre you ready to order?"
+                } else{
+                    greeting = "Good Evening! \nAre you ready to order?"
+                }
+
+                document.getElementById("hello").innerText= greeting;
+
+            }
+
+
+        </script>
+
+
+</body>
+</html>

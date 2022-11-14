@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <style>
+        *{ box-sizing: border-box;}
+
+        *, html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body{
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-color: #fffecd;
+        }
+
+        #wrapper{
+            width: 80%;
+            height: 90%;
+            margin:auto;
+            overflow: auto;
+            
+        }
+
+        header{
+            background-color: #cca965;
+            border: 10px #a62c2c solid;
+            color: black;
+            height: 100px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        nav{
+            padding-top: 20px;
+            width: 20%;
+            text-align: center;
+            float: left;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+        nav ul{
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        nav ul li{
+            padding: 10px;
+            margin: 3px;
+            text-decoration: none;
+            background-color: #cca965;
+            text-align: left;
+            
+            
+        }
+
+        nav ul a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            
+        }
+
+        nav ul li a:visited{
+            color: gray;
+        }
+
+        nav ul li a:hover{
+            color: gainsboro;
+        }
+
+        nav ul li a:active{
+            color: #aeb1b3;
+        }
+
+        main{
+            margin-top: 70px;
+            display: grid;
+            width: 50%;
+            float: left;
+            text-align: center;
+        }
+        main h2{
+            padding: 30px;
+        }
+
+        main div{
+            margin: auto;
+        }
+
+        main ul{
+            padding: 10px;
+            padding-bottom: 30px;
+            list-style:inside;  /*helps to keep the bullet point close to text*/
+            text-align: left;
+            margin: auto;
+        }
+
+        table{
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+            font-weight: bold;
+        }
+
+        tr td{
+            color: black;
+            background-color: white;
+            padding: 2px;
+        }
+
+        table th{
+            background-image: url(./coffee_beans.jpg);
+            color: white;
+            padding: 3px;
+        }
+
+        #address{
+            text-align: left;
+        }
+
+        #side{
+            width: 30%;
+            float: left;
+            padding-right: 15px;
+            padding-top: 40px;
+        }
+
+        #greeting{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            border: 5px solid transparent;
+            border-image: url(./coffee_beans.jpg) 30 round;
+            margin: 30px;
+        }
+
+
+        footer {
+            padding-top: 10px;
+            width:100%;
+            height: 50px;
+            text-align:center;
+            position: absolute;
+            bottom: 0;
+            height: 5%;
+            background-color: #cca965;
+        }
+
+        #discount {
+            background-color: #dd8219;
+            padding: 4px;
+            margin-top: 15px;
+            color: white;
+            border: none;
+            box-shadow: 3px 3px black;
+        }
+        
+        #game{
+            padding: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        
+        #play {
+            background-color: #dd8219;
+            padding: 4px;
+            margin-top: 15px;
+            color: white;
+            border: none;
+            box-shadow: 3px 3px black;
+        }
+
+        #answer{
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body onload="myGreeting()">
+        <header>
+            <h1>Tanggo Coffee Shop</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+        <main>
+            <table>
+                <tr><th colspan="4">Tanggo Coffe Shop Menu</th></tr>
+                <tr>
+                    <td>What's Brewing?</td>
+                    <td>Price</td>
+                    <td>What is baking?</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>Americano</td>
+                    <td>$3.00</td>
+                    <td>Cake of the day</td>
+                    <td>$8.00</td>
+                </tr>
+                <tr>
+                    <td>Latte</td>
+                    <td>$4.00</td>
+                    <td>Cupecakes</td>
+                    <td>$5.00</td>
+                </tr>
+                <tr>
+                    <td>Cappuccino</td>
+                    <td>$4.00</td>
+                    <td>Croissant</td>
+                    <td>$3.00</td>
+                </tr>
+                <tr>
+                    <td>Iced Coffee</td>
+                    <td>$4.00</td>
+                    <td>Garlic Bread</td>
+                    <td>$4.00</td>
+                </tr>
+            </table>
+            
+        </main>
+        <div id="side">
+            <div id="greeting">
+                <img src="coffee_cup.jpg"">
+                
+                <h3 id="hello"><br></h3>
+                <input type="button" name="" id="discount" value="Do you want some discount?" onclick="discount()">
+                <div id="game">
+                    <p id="textGame"><br>Guess the number I am thinking of. If you guess it right, you will win a 15% discount. Ready? Input the number below</p>
+                    <div id="guess">
+                        <br>
+                        <br>
+                        <label for="guessNumber">Enter your guess number</label>
+                        <br>
+                        <input type="number" name="guessNumber" id="guessNumber" size="10" min="0">
+                        <br>
+                        <input type="button" id="play" value="Play" onclick="play()"></input>
+                        <p id="answer"></p>
+                        <p id="code"></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+        <footer>
+            Ⓒ Tanggo Coffee. All rights reserved 2018
+        </footer>
+
+        <script>
+
+            let pc = 0;
+            pc = Math.floor(Math.random()*10)+1
+
+            function myGreeting(){
+                var today = new Date();
+                var hourNow = today.getHours();
+                var greeting;
+
+                if(hourNow > 0 && hourNow < 12){
+                    greeting = "Good Morning! \nAre you ready to order?"
+                } else if(hourNow >= 12 && hourNow < 18){
+                    greeting = "Good Afternoon! \nAre you ready to order?"
+                } else{
+                    greeting = "Good Evening! \nAre you ready to order?"
+                }
+
+                document.getElementById("hello").innerText= greeting;
+
+            }
+
+
+            function discount(){
+                document.getElementById("game").style.display="block";
+                document.getElementById("game").style.paddingTop="10px"
+            }
+
+            function play(){
+                document.getElementById("code").style.display= "none";
+                var user = 0;
+                var code = 0;
+                user = parseInt(document.getElementById("guessNumber").value);               
+                console.log("var user "+user)
+                console.log("var pc "+pc)
+
+                code = Math.floor(Math.random()*1000)+1
+
+                if(document.getElementById("guessNumber").value == ""){
+                    document.getElementById("answer").innerHTML="\n\nInput a number!"
+                    document.getElementById("answer").style.display="block";
+                    
+                }else{
+                    if(user < pc){
+                        document.getElementById("answer").innerHTML="\n\nTry a higher number"
+                        document.getElementById("answer").style.display="block";
+                    }else if(user > pc){
+                        document.getElementById("answer").innerHTML="\n\nTry a lower number"
+                        document.getElementById("answer").style.display="block";
+                    } else{
+                        document.getElementById("answer").innerHTML="Congrats, you won 15% off. \nShow this code at the counter to claim your prize:"
+                        document.getElementById("answer").style.display="block";
+                        document.getElementById("code").innerHTML= code;
+                        document.getElementById("code").style.display="block";
+                        document.getElementById("code").style.fontSize="2em"
+                    }
+                }
+
+                
+
+                
+            }
+
+        </script>
+
+
+</body>
+</html>
